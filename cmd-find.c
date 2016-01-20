@@ -802,19 +802,6 @@ cmd_find_clear_state(struct cmd_find_state *fs, struct cmd_q *cmdq, int flags)
 	fs->idx = -1;
 }
 
-/* Find current state. */
-int
-cmd_find_current(struct cmd_find_state *fs, struct cmd_q *cmdq, int flags)
-{
-	cmd_find_clear_state(fs, cmdq, flags);
-	if (cmd_find_current_session(fs) != 0) {
-		if (~flags & CMD_FIND_QUIET)
-			cmdq_error(cmdq, "no current session");
-		return (-1);
-	}
-	return (0);
-}
-
 /* Check if a state if valid. */
 int
 cmd_find_valid_state(struct cmd_find_state *fs)
