@@ -929,6 +929,7 @@ screen_write_cell(struct screen_write_ctx *ctx, const struct grid_cell *gc)
 	 * If the width is zero, combine onto the previous character, if
 	 * there is space.
 	 */
+	 /*
 	if (width == 0) {
 		if (screen_write_combine(ctx, &gc->data) == 0) {
 			screen_write_initctx(ctx, &ttyctx, 0);
@@ -936,6 +937,7 @@ screen_write_cell(struct screen_write_ctx *ctx, const struct grid_cell *gc)
 		}
 		return;
 	}
+	*/
 
 	/* Initialise the redraw context, saving the last cell. */
 	screen_write_initctx(ctx, &ttyctx, 1);
